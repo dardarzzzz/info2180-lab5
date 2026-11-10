@@ -1,1 +1,102 @@
-/* Add your own styles */
+:root {
+  color-scheme: light;
+  --background: oklch(1 0 0);
+  --surface: oklch(0.97 0.008 130);
+  --ink: oklch(0.25 0.02 130);
+  --muted: oklch(0.44 0.025 130);
+  --primary: oklch(0.46 0.12 130);
+  --primary-hover: oklch(0.39 0.10 130);
+  --line: oklch(0.85 0.018 130);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+header, main {
+  width: min(100% - 3rem,  50rem);
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+header {
+  padding: 4.5rem 0 2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+h1 {
+  margin: 0 0 0.75rem;
+  font-size: 2.5rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+header p { margin: 0; color: var(--muted); max-width: 60ch; }
+main { padding-block: 2rem 4rem; }
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+label { flex-basis: 100%; font-weight: 600; }
+
+input, button { font: inherit; min-height: 48px; border-radius: 6px; }
+
+input {
+  flex: 1 1 240px;
+  min-width: 0;
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: var(--background);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+input::placeholder { color: var(--muted); opacity: 1; }
+input:hover { border-color: var(--muted); }
+
+button {
+  padding: 0.65rem 1.5rem;
+  border: 0;
+  background: var(--primary);
+  color: var(--background);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease-out, transform 160ms ease-out;
+}
+
+button:hover { background: var(--primary-hover); }
+button:active { transform: translateY(1px); }
+button:disabled { background: var(--muted); cursor: wait; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 4px; }
+
+.search-help { color: var(--muted); font-size: 0.9rem; margin: 0.75rem 0 2rem; }
+#result { overflow-wrap: anywhere; }
+#result:empty { display: none; }
+#result ul { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+#result li { padding: 1rem; border-bottom: 1px solid var(--line); }
+#result li:nth-child(odd) { background: var(--surface); }
+#result p { padding: 1rem; background: var(--surface); border-radius: 6px; }
+
+@media (max-width: 480px) {
+  header, main { width: calc(100% - 2rem); }
+  header { padding-top: 2.5rem; }
+  h1 { font-size: 2rem; }
+  button { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button { transition: none; }
+}
