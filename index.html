@@ -13,17 +13,17 @@
 
 	<body>
 		<header>
-			<h1>World Database Lookup</h1><p>Find countries and their heads of state.</p>
+			<h1>World Database Lookup</h1><p>Find country details and the cities within them.</p>
 		</header>
 
 		<main>
 			<div id="controls">
 				<label for="country">Country:</label>
 				<input id="country" type="search" name="country" placeholder="Enter country name" aria-describedby="search-help" />
-				<button id="lookup">Lookup</button>
+				<button id="lookup" type="button">Lookup Countries</button><button id="lookup-cities" type="button">Lookup Cities</button>
 			</div>
 			
-			<p id="search-help" class="search-help">Try a full name or a few letters, such as &ldquo;Jam&rdquo;. Leave blank to view all countries.</p><div id="result">
+			<p id="search-help" class="search-help">Try a full name or a few letters, such as &ldquo;Jam&rdquo;. Leave blank to view all countries or cities.</p><div id="result">
 				<!-- countries will appear here -->
 			</div>
 		</main>
