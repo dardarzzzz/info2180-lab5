@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>World Database Lookup</title>
+
+		<!-- you can modify this as needed or to your preference -->
+		<link href="world.css" type="text/css" rel="stylesheet" />
+
+		<!-- you write this -->
+		<script src="world.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<header>
+			<h1>World Database Lookup</h1><p>Find country details and the cities within them.</p>
+		</header>
+
+		<main>
+			<div id="controls">
+				<label for="country">Country:</label>
+				<input id="country" type="search" name="country" placeholder="Enter country name" aria-describedby="search-help" />
+				<button id="lookup" type="button">Lookup Countries</button><button id="lookup-cities" type="button">Lookup Cities</button>
+			</div>
+			
+			<p id="search-help" class="search-help">Try a full name or a few letters, such as &ldquo;Jam&rdquo;. Leave blank to view all countries or cities.</p><div id="result">
+				<!-- countries will appear here -->
+			</div>
+		</main>
+
+	</body>
+</html>
